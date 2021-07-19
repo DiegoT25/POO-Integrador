@@ -27,9 +27,13 @@ public class PrincipalIU extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btVenta = new javax.swing.JButton();
+        btInventario = new javax.swing.JButton();
+        btSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         optNuevaPersona = new javax.swing.JMenu();
-        cmdNuevaPersona = new javax.swing.JMenuItem();
+        cmdVenta = new javax.swing.JMenuItem();
+        cmdNuevoProducto = new javax.swing.JMenuItem();
         cmdSalir = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         optInfo = new javax.swing.JMenu();
@@ -37,17 +41,46 @@ public class PrincipalIU extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        optNuevaPersona.setText("Archivo");
-
-        cmdNuevaPersona.setText("Nueva Persona");
-        cmdNuevaPersona.addActionListener(new java.awt.event.ActionListener() {
+        btVenta.setText("Nueva Venta");
+        btVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdNuevaPersonaActionPerformed(evt);
+                btVentaActionPerformed(evt);
             }
         });
-        optNuevaPersona.add(cmdNuevaPersona);
+
+        btInventario.setText("Agregar Producto");
+        btInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInventarioActionPerformed(evt);
+            }
+        });
+
+        btSalir.setText("Salir");
+        btSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalirActionPerformed(evt);
+            }
+        });
+
+        optNuevaPersona.setText("Archivo");
+
+        cmdVenta.setText("Nueva Venta");
+        optNuevaPersona.add(cmdVenta);
+
+        cmdNuevoProducto.setText("Nuevo Producto");
+        cmdNuevoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdNuevoProductoActionPerformed(evt);
+            }
+        });
+        optNuevaPersona.add(cmdNuevoProducto);
 
         cmdSalir.setText("Salir");
+        cmdSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSalirActionPerformed(evt);
+            }
+        });
         optNuevaPersona.add(cmdSalir);
         optNuevaPersona.add(jSeparator1);
 
@@ -56,6 +89,11 @@ public class PrincipalIU extends javax.swing.JFrame {
         optInfo.setText("Acerca de");
 
         cmdInformacion.setText("Información");
+        cmdInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdInformacionActionPerformed(evt);
+            }
+        });
         optInfo.add(cmdInformacion);
 
         jMenuBar1.add(optInfo);
@@ -66,21 +104,60 @@ public class PrincipalIU extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btInventario, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(btVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmdNuevaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNuevaPersonaActionPerformed
+    private void cmdNuevoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNuevoProductoActionPerformed
         // TODO add your handling code here:
-        Inventario frmPersona = new Inventario();
-        frmPersona.setVisible(true);
-    }//GEN-LAST:event_cmdNuevaPersonaActionPerformed
+        Inventario frmProducto = new Inventario();
+        frmProducto.setVisible(true);
+    }//GEN-LAST:event_cmdNuevoProductoActionPerformed
+
+    private void cmdSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_cmdSalirActionPerformed
+
+    private void btVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVentaActionPerformed
+        // TODO add your handling code here:
+        Boleta frmVenta = new Boleta();
+        frmVenta.setVisible(true);
+    }//GEN-LAST:event_btVentaActionPerformed
+
+    private void btSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btSalirActionPerformed
+
+    private void btInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInventarioActionPerformed
+        // TODO add your handling code here:
+        Inventario frmProducto = new Inventario();
+        frmProducto.setVisible(true);
+    }//GEN-LAST:event_btInventarioActionPerformed
+
+    private void cmdInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdInformacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdInformacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,9 +196,13 @@ public class PrincipalIU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btInventario;
+    private javax.swing.JButton btSalir;
+    private javax.swing.JButton btVenta;
     private javax.swing.JMenuItem cmdInformacion;
-    private javax.swing.JMenuItem cmdNuevaPersona;
+    private javax.swing.JMenuItem cmdNuevoProducto;
     private javax.swing.JMenuItem cmdSalir;
+    private javax.swing.JMenuItem cmdVenta;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenu optInfo;

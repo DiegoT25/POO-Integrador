@@ -4,17 +4,19 @@ public class Producto {
     private int codigo;
     private String categoria;
     private String nombre;
-    private int precioUnd;
+    private float precioUnd;
     private float descuento;
     private float impuesto;
-
-    public Producto(int codigo, String categoría, String nombre, int precioUnd, float descuento, float impuesto) {
+    private String disponible;
+    
+    public Producto(int codigo, String categoría, String nombre, float precioUnd, float descuento, float impuesto, String disponible) {
         this.codigo = codigo;
         this.categoria = categoría;
         this.nombre = nombre;
         this.precioUnd = precioUnd;
         this.descuento = descuento;
         this.impuesto = impuesto;
+        this.disponible = disponible;
     }
 
     public Producto() {
@@ -24,6 +26,7 @@ public class Producto {
         this.precioUnd = 0;
         this.descuento = 0;
         this.impuesto = 0;
+        this.disponible = "";
     }
 
     public int getCodigo() {
@@ -50,11 +53,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getPrecioUnd() {
+    public float getPrecioUnd() {
         return precioUnd;
     }
 
-    public void setPrecioUnd(int precioUnd) {
+    public void setPrecioUnd(float precioUnd) {
         this.precioUnd = precioUnd;
     }
 
@@ -72,6 +75,13 @@ public class Producto {
 
     public void setImpuesto(float impuesto) {
         this.impuesto = impuesto;
+    }
+    
+    public String getDisponible(){
+        return disponible;
+    }
+    public void setDisponible(String disponible){
+        this.disponible = disponible;
     }
     
 
